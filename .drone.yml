@@ -6,10 +6,11 @@ steps:
 - name: build
   image: maven:3.6.3-openjdk-11
   commands:
-  - mvn clean install -DskipTests
+  - mvn clean install package -Dmaven.test.skip=true -Dpmd.failOnViolation=false
+  
 - name: docker  
   image: plugins/docker
   settings:
-    username: dindocker13
-    password: docker@123
-    repo: dindocker13/drone-demo
+    username: parthsharma97
+    password: P@rth123$
+    repo: parthsharma97/droneci
